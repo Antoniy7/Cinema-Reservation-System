@@ -1,5 +1,3 @@
-PRAGMA foreign_keys=ON;
-
 DROP TABLE IF EXISTS Movies;
 
 CREATE TABLE Movies(
@@ -13,10 +11,10 @@ DROP TABLE IF EXISTS Projections;
 CREATE TABLE Projections(
   projection_id INTEGER PRIMARY KEY,
   projection_movie_id INTEGER,
-  FOREIGN KEY(projection_movie_id) REFERENCES Movies(movie_id),
   projection_type TEXT,
   projeciton_date DATE,
-  projection_time INTEGER
+  projection_time INTEGER,
+  FOREIGN KEY(projection_movie_id) REFERENCES Movies(movie_id)
 );
 
 DROP TABLE IF EXISTS Reservations;
