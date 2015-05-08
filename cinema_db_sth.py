@@ -17,7 +17,13 @@ class cinema_database_enquery:
 
     def get_all_movies_by_id_and_date(self, movie_id, movie_date):
         cursor = self.conn.cursor()
-        result = cursor.execute(tuk ni trqbva query)
+        result = cursor.execute("""
+            SELECT a.name, b.data, b.time, b.type
+            FROM projections as b 
+            JOIN movies as a
+            ON a.id = b.movie_id
+            WHERE b.movie_id 
+            """)
         return result.fetchall()
 
     def get_all_movies_by_id(self, movie_id):
