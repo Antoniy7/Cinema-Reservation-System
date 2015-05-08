@@ -28,3 +28,6 @@ CREATE TABLE Reservations(
   FOREIGN KEY(reservation_projection_id) REFERENCES Projections(projection_id)
 );
 
+INSERT INTO Movies(movie_name,movie_rating)
+VALUES('The Hunger Games: Catching Fire', 7.9);
+
